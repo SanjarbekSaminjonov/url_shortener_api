@@ -21,7 +21,6 @@ def create(request):
     myKey = 'link'
 
     newData = request.data
-    print(newData)
 
     if myKey in newData.keys():
         newLink = newData[myKey]

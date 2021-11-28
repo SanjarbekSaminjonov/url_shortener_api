@@ -126,11 +126,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'staticfiles'
-]
+if not DEBUG:
+    STATIC_ROOT = BASE_DIR / 'static/'
 
-STATIC_ROOT = BASE_DIR / 'static'
+STATICFILES_DIRS = [
+    BASE_DIR / 'staticfiles/',
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -143,9 +144,5 @@ REST_FRAMEWORK = {
     ]
 }
 
-CORS_ORIGIN_WHITELIST = (
-    # 'http://127.0.0.1:8000',
-    # 'http://127.0.0.1:3000',
-    # 'http://localhost:8000',
-    # 'http://localhost:3000',
-)
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
