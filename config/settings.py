@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l04u8$68f29(jzaovrqu%sx22d^2*od+h_v@j=+&(ub&azz33_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -142,6 +142,20 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ]
 }
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOWED_ORIGINS = [
+    # 'http://127.0.0.1:8000',
+    # 'http://127.0.0.1:5500/',
+]
+
+
+CORS_ALLOWED_ORIGINS_REGEXES = [
+    # 'http://127.0.0.1:8000',
+    # 'http://127.0.0.1:5500/',
+]
 
 CORS_ORIGIN_WHITELIST = (
     # 'http://127.0.0.1:8000',
